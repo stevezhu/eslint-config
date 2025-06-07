@@ -1,0 +1,73 @@
+{
+  "name": "@stzhu/eslint-config",
+  "version": "0.1.0",
+  "description": "Shared config for ESLint",
+  "keywords": [
+    "eslint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevezhu/eslint-config.git"
+  },
+  "license": "MIT",
+  "author": "Steve Zhu <4130171+stevezhu@users.noreply.github.com>",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./ts": "./src/ts.js",
+    "./react": "./src/react.js",
+    "./node": "./src/node.js",
+    "./expo": "./src/expo.js",
+    "./storybook": "./src/storybook.js",
+    "./vitest": "./src/vitest.js",
+    "./tailwind": "./src/tailwind.js",
+    "./lingui": "./src/lingui.js"
+  },
+  "bin": {
+    "eslint": "./node_modules/eslint/bin/eslint.js"
+  },
+  "scripts": {
+    "format": "prettier -w .",
+    "lint": "prettier -c . && eslint .",
+    "test": "tsc --noEmit -p jsconfig.json"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.28.0",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
+    "@vitest/eslint-plugin": "^1.2.1",
+    "eslint": "^9.28.0",
+    "eslint-config-expo": "^9.2.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-turbo": "^2.5.4",
+    "eslint-plugin-expo": "^0.1.4",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-lingui": "^0.10.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-storybook": "^0.12.0",
+    "eslint-plugin-tailwindcss": "^3.18.0",
+    "eslint-plugin-turbo": "^2.5.4",
+    "globals": "^16.2.0",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
+  },
+  "devDependencies": {
+    "@stzhu/prettier-plugin-tsconfig": "^0.5.0",
+    "@stzhu/tsconfig": "^0.1.0",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "eslint-plugin-import-x": "^4.15.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-packagejson": "^2.5.15"
+  },
+  "peerDependencies": {
+    "postcss": "^8",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.11.1"
+}

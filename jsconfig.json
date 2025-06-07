@@ -1,0 +1,12 @@
+{
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "maxNodeModuleJsDepth": 0
+  }
+}
