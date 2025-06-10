@@ -69,5 +69,16 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   },
+  "peerDependenciesMeta": {
+    "postcss": {
+      "optional": true
+    },
+    "tailwindcss": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
   "packageManager": "pnpm@10.11.1"
 }
