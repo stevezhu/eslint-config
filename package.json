@@ -23,9 +23,6 @@
     "./tailwind": "./src/tailwind.js",
     "./lingui": "./src/lingui.js"
   },
-  "bin": {
-    "eslint": "./node_modules/eslint/bin/eslint.js"
-  },
   "scripts": {
     "format": "prettier -w .",
     "lint": "prettier -c . && eslint .",
@@ -33,15 +30,14 @@
   },
   "dependencies": {
     "@eslint/js": "^9.28.0",
-    "@typescript-eslint/eslint-plugin": "^8.33.1",
-    "@typescript-eslint/parser": "^8.33.1",
-    "@vitest/eslint-plugin": "^1.2.1",
-    "eslint": "^9.28.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "@vitest/eslint-plugin": "^1.2.2",
     "eslint-config-expo": "^9.2.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-config-turbo": "^2.5.4",
     "eslint-plugin-expo": "^0.1.4",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-import-x": "^4.15.2",
     "eslint-plugin-lingui": "^0.10.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -51,22 +47,19 @@
     "eslint-plugin-tailwindcss": "^3.18.0",
     "eslint-plugin-turbo": "^2.5.4",
     "globals": "^16.2.0",
-    "postcss": "^8.5.4",
-    "tailwindcss": "^4.1.8",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.33.1"
+    "typescript-eslint": "^8.34.0"
   },
   "devDependencies": {
     "@stzhu/prettier-plugin-tsconfig": "^0.5.0",
     "@stzhu/tsconfig": "^0.1.0",
     "@types/eslint-config-prettier": "^6.11.3",
-    "eslint-plugin-import-x": "^4.15.1",
     "prettier": "^3.5.3",
     "prettier-plugin-packagejson": "^2.5.15"
   },
   "peerDependencies": {
+    "eslint": "^9",
     "postcss": "^8",
-    "tailwindcss": "^4",
+    "tailwindcss": "^3",
     "typescript": "^5"
   },
   "peerDependenciesMeta": {
