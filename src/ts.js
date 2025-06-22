@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import prettier from 'eslint-config-prettier';
-import turbo from 'eslint-plugin-turbo';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -13,7 +12,6 @@ export default tseslint.config(
     // name: 'ts/ignores',
     ignores: ['dist/', '.wrangler/'],
   },
-  turbo.configs['flat/recommended'],
   Object.assign({ name: '@eslint/js/recommended' }, js.configs.recommended),
   ...importConfig,
   {
