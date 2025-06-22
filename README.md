@@ -42,6 +42,7 @@ Add these as needed:
 - `@stzhu/eslint-config/vitest`: Vitest testing configuration
 - `@stzhu/eslint-config/storybook`: Storybook configuration
 - `@stzhu/eslint-config/tailwind`: Tailwind CSS configuration
+- `@stzhu/eslint-config/turbo`: Turborepo monorepo
 - `@stzhu/eslint-config/lingui`: Lingui internationalization configuration
 
 ## Example Configurations

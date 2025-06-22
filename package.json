@@ -21,7 +21,8 @@
     "./storybook": "./src/storybook.js",
     "./vitest": "./src/vitest.js",
     "./tailwind": "./src/tailwind.js",
-    "./lingui": "./src/lingui.js"
+    "./lingui": "./src/lingui.js",
+    "./turbo": "./src/turbo.js"
   },
   "scripts": {
     "format": "prettier -w .",
