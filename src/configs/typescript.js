@@ -6,7 +6,7 @@ export default tseslint.config(
     name: 'typescript/languageOptions',
     languageOptions: {
       parserOptions: {
-        project: true,
+        projectService: true,
       },
     },
   },
