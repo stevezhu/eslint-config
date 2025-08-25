@@ -42,8 +42,8 @@ importers:
         specifier: ^4.15.2
         version: 4.16.1(@typescript-eslint/utils@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint@9.34.0(jiti@2.5.1))
       eslint-plugin-lingui:
-        specifier: ^0.10.1
-        version: 0.10.1(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)
+        specifier: ^0.11.0
+        version: 0.11.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)
       eslint-plugin-react:
         specifier: ^7.37.5
         version: 7.37.5(eslint@9.34.0(jiti@2.5.1))
@@ -717,8 +717,8 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-lingui@0.10.1:
-    resolution: {integrity: sha512-pyNM1fC4IDgxOdzwe4DxOOIBf396tbE8m9s4aw01TqOKCEIXT2apSqmZ6ESeX26lBQS2ItYj/0Bhme6ZLKfYNQ==}
+  eslint-plugin-lingui@0.11.0:
+    resolution: {integrity: sha512-O2Ixoapt5fa4VKZJgXhVwb6BHnzByIUDNMfZOhHWGMYk40GfGCho4MUfspLVrHAFLimgBPKXtCcJ8GC4YNZmfg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: ^8.37.0 || ^9.0.0
@@ -2349,7 +2349,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-lingui@0.10.1(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2):
+  eslint-plugin-lingui@0.11.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2):
     dependencies:
       '@typescript-eslint/utils': 8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)
       eslint: 9.34.0(jiti@2.5.1)
