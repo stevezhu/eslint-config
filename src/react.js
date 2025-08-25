@@ -11,7 +11,7 @@ export default tseslint.config(
   ...baseConfig,
   {
     name: 'react/src-browser-globals',
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       globals: globals.browser,
     },
