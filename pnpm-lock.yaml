@@ -31,7 +31,7 @@ importers:
         version: 10.1.8(eslint@9.28.0(jiti@1.21.7))
       eslint-config-turbo:
         specifier: ^2.5.4
-        version: 2.5.4(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4)
+        version: 2.5.6(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4)
       eslint-plugin-expo:
         specifier: ^0.1.4
         version: 0.1.4(eslint@9.28.0(jiti@1.21.7))(typescript@5.8.3)
@@ -61,7 +61,7 @@ importers:
         version: 3.18.0(tailwindcss@3.4.17)
       eslint-plugin-turbo:
         specifier: ^2.5.4
-        version: 2.5.4(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4)
+        version: 2.5.6(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4)
       globals:
         specifier: ^16.2.0
         version: 16.3.0
@@ -864,8 +864,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-turbo@2.5.4:
-    resolution: {integrity: sha512-OpjpDLXIaus0N/Y+pMj17K430xjpd6WTo0xPUESqYZ9BkMngv2n0ZdjktgJTbJVnDmK7gHrXgJAljtdIMcYBIg==}
+  eslint-config-turbo@2.5.6:
+    resolution: {integrity: sha512-1EV/UqdKE75st9q6y0MCxz7qp2v7RyGvbQsMLSuCz+VH8ScnSfmhd8FcAbqx3BshCy5IluujzMB6T5iCgL3/sA==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -985,8 +985,8 @@ packages:
     peerDependencies:
       tailwindcss: ^3.4.0
 
-  eslint-plugin-turbo@2.5.4:
-    resolution: {integrity: sha512-IZsW61DFj5mLMMaCJxhh1VE4HvNhfdnHnAaXajgne+LUzdyHk2NvYT0ECSa/1SssArcqgTvV74MrLL68hWLLFw==}
+  eslint-plugin-turbo@2.5.6:
+    resolution: {integrity: sha512-KUDE23aP2JV8zbfZ4TeM1HpAXzMM/AYG/bJam7P4AalUxas8Pd/lS/6R3p4uX91qJcH1LwL4h0ED48nDe8KorQ==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -2803,10 +2803,10 @@ snapshots:
     dependencies:
       eslint: 9.28.0(jiti@1.21.7)
 
-  eslint-config-turbo@2.5.4(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4):
+  eslint-config-turbo@2.5.6(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4):
     dependencies:
       eslint: 9.28.0(jiti@1.21.7)
-      eslint-plugin-turbo: 2.5.4(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4)
+      eslint-plugin-turbo: 2.5.6(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4)
       turbo: 2.5.4
 
   eslint-import-context@0.1.9(unrs-resolver@1.11.1):
@@ -2966,7 +2966,7 @@ snapshots:
       postcss: 8.5.5
       tailwindcss: 3.4.17
 
-  eslint-plugin-turbo@2.5.4(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4):
+  eslint-plugin-turbo@2.5.6(eslint@9.28.0(jiti@1.21.7))(turbo@2.5.4):
     dependencies:
       dotenv: 16.0.3
       eslint: 9.28.0(jiti@1.21.7)
