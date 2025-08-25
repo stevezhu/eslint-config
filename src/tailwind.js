@@ -2,7 +2,7 @@ import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config({
-  files: ['**/*.{jsx,tsx}'],
+  files: ['**/*.tsx'],
   plugins: {
     'better-tailwindcss': eslintPluginBetterTailwindcss,
   },
