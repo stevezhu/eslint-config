@@ -1,4 +1,4 @@
+import { defineConfig } from 'eslint/config';
 import pluginLingui from 'eslint-plugin-lingui';
-import tseslint from 'typescript-eslint';
 
-export default tseslint.config(pluginLingui.configs['flat/recommended']);
+export default defineConfig(pluginLingui.configs['flat/recommended']);

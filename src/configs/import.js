@@ -1,17 +1,15 @@
-import importX from 'eslint-plugin-import-x';
+import { defineConfig } from 'eslint/config';
+import importPlugin from 'eslint-plugin-import';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default defineConfig(
+  importPlugin.flatConfigs.recommended,
   {
     name: 'import/custom',
-    plugins: {
-      'import-x': importX,
-    },
     rules: {
-      'import-x/first': 'error',
-      'import-x/newline-after-import': 'error',
-      'import-x/no-duplicates': 'error',
+      'import/enforce-node-protocol-usage': 'warn',
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
     },
   },
   {

@@ -1,4 +1,4 @@
+import { defineConfig } from 'eslint/config';
 import turbo from 'eslint-plugin-turbo';
-import tseslint from 'typescript-eslint';
 
-export default tseslint.config(turbo.configs['flat/recommended']);
+export default defineConfig(turbo.configs['flat/recommended']);
