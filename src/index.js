@@ -1,3 +1,1 @@
-import { config } from 'typescript-eslint';
-
-export const defineConfig = config;
+export { defineConfig, globalIgnores } from 'eslint/config';
