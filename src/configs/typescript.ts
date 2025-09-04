@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 import { configs as tseslintConfigs } from 'typescript-eslint';
 
 export default defineConfig(
-  ...tseslintConfigs.strictTypeChecked,
+  tseslintConfigs.strictTypeChecked,
   {
     name: 'typescript/languageOptions',
     languageOptions: {
