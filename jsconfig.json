@@ -1,11 +1,12 @@
 {
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "skipLibCheck": true,
+    "strictNullChecks": true,
     "module": "Node18",
     "noEmit": true,
     "allowJs": true,
     "checkJs": true,
-    "maxNodeModuleJsDepth": 0
+    "maxNodeModuleJsDepth": 0,
+    "skipLibCheck": true
   }
 }

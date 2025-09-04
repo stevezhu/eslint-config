@@ -1,8 +1,8 @@
 import { defineConfig } from 'eslint/config';
-import tseslint from 'typescript-eslint';
+import { configs as tseslintConfigs } from 'typescript-eslint';
 
 export default defineConfig(
-  ...tseslint.configs.strictTypeChecked,
+  ...tseslintConfigs.strictTypeChecked,
   {
     name: 'typescript/languageOptions',
     languageOptions: {
@@ -57,6 +57,6 @@ export default defineConfig(
   },
   {
     files: ['**/*.{cjs,js}'],
-    extends: [tseslint.configs.disableTypeChecked],
+    extends: [tseslintConfigs.disableTypeChecked],
   },
 );

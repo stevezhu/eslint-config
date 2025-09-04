@@ -1,4 +1,4 @@
 import { defineConfig } from 'eslint/config';
-import turbo from 'eslint-plugin-turbo';
+import { configs as turboConfigs } from 'eslint-plugin-turbo';
 
-export default defineConfig(turbo.configs['flat/recommended']);
+export default defineConfig(turboConfigs['flat/recommended']);

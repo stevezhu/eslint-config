@@ -1,9 +1,3 @@
-// @ts-check
+import ts from './src/ts.js';
 
-import js from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-import prettier from 'eslint-config-prettier';
-
-import importConfig from './src/configs/import.js';
-
-export default defineConfig(js.configs.recommended, ...importConfig, prettier);
+export default ts;

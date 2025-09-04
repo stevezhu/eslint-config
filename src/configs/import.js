@@ -6,12 +6,19 @@ export default defineConfig(
   importPlugin.flatConfigs.recommended,
   {
     name: 'import/custom',
+    settings: {
+      'import/resolver': {
+        typescript: true,
+        node: true,
+      },
+    },
     rules: {
-      'import/enforce-node-protocol-usage': 'warn',
+      'import/enforce-node-protocol-usage': ['error', 'always'],
       'import/first': 'error',
       'import/newline-after-import': 'error',
     },
   },
+
   {
     name: 'simple-import-sort/custom',
     plugins: {

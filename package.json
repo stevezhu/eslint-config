@@ -25,6 +25,7 @@
   },
   "scripts": {
     "format": "prettier -w .",
+    "inspect": "eslint --inspect-config",
     "lint": "prettier -c . && eslint .",
     "test": "tsc --noEmit -p jsconfig.json"
   },
@@ -36,6 +37,7 @@
     "eslint-config-expo": "^9.2.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-config-turbo": "^2.5.4",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-better-tailwindcss": "^3.7.5",
     "eslint-plugin-expo": "^0.1.4",
     "eslint-plugin-import": "^2.32.0",
@@ -50,7 +52,8 @@
     "typescript-eslint": "^8.34.0"
   },
   "devDependencies": {
-    "@stzhu/prettier-plugin-tsconfig": "^0.5.0",
+    "@eslint/config-inspector": "^1.2.0",
+    "@stzhu/prettier-plugin-tsconfig": "^0.6.0",
     "@stzhu/tsconfig": "^0.1.0",
     "@types/eslint-config-prettier": "^6.11.3",
     "prettier": "^3.5.3",
