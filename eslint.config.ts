@@ -1,3 +1,5 @@
+import { defineConfig, globalIgnores } from 'eslint/config';
+
 import ts from './src/ts.js';
 
-export default ts;
+export default defineConfig(globalIgnores(['dist']), ts);

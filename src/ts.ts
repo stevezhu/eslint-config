@@ -12,7 +12,7 @@ import typescriptConfig from './configs/typescript.js';
 
 export default defineConfig(
   Object.assign({ name: '@eslint/js/recommended' }, js.configs.recommended),
-  ...importConfig,
+  importConfig,
   importPlugin.flatConfigs.typescript,
   {
     name: 'ts/config-file-globals',
@@ -21,6 +21,6 @@ export default defineConfig(
       globals: globals.node,
     },
   },
-  ...typescriptConfig,
+  typescriptConfig,
   prettier,
 );

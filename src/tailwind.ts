@@ -7,7 +7,7 @@ export default defineConfig({
     'better-tailwindcss': eslintPluginBetterTailwindcss,
   },
   rules: {
-    ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
+    ...eslintPluginBetterTailwindcss.configs['recommended-error']?.rules,
     'better-tailwindcss/no-deprecated-classes': 'warn',
   },
 });

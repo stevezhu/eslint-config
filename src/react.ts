@@ -9,7 +9,7 @@ import globals from 'globals';
 import baseConfig from './ts.js';
 
 export default defineConfig(
-  ...baseConfig,
+  baseConfig,
   importPlugin.flatConfigs.react,
   {
     name: 'react/src-browser-globals',
@@ -18,8 +18,8 @@ export default defineConfig(
       globals: globals.browser,
     },
   },
-  react.configs.flat['recommended'],
-  react.configs.flat['jsx-runtime'],
+  react.configs.flat['recommended'] ?? [],
+  react.configs.flat['jsx-runtime'] ?? [],
   {
     name: 'react/custom',
     settings: {
