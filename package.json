@@ -107,14 +107,10 @@
   },
   "peerDependencies": {
     "eslint": "^9",
-    "postcss": "^8",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
   "peerDependenciesMeta": {
-    "postcss": {
-      "optional": true
-    },
     "tailwindcss": {
       "optional": true
     },
