@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "author": "Steve Zhu <4130171+stevezhu@users.noreply.github.com>",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
