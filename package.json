@@ -13,16 +13,6 @@
   "author": "Steve Zhu <4130171+stevezhu@users.noreply.github.com>",
   "type": "module",
   "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
-    },
     "./ts": {
       "import": {
         "types": "./dist/ts.d.ts",

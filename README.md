@@ -34,8 +34,8 @@ Create an `eslint.config.js` (or `eslint.config.ts` for TypeScript projects) fil
 ```javascript
 // @ts-check
 
-import { defineConfig } from '@stzhu/eslint-config';
 import tsConfig from '@stzhu/eslint-config/ts';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig(
   // select from one of the configs below
@@ -71,8 +71,8 @@ Add these as needed:
 ### TypeScript Project
 
 ```javascript
-import { defineConfig } from '@stzhu/eslint-config';
 import tsConfig from '@stzhu/eslint-config/ts';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig(...tsConfig);
 ```
@@ -80,8 +80,8 @@ export default defineConfig(...tsConfig);
 ### React Project
 
 ```javascript
-import { defineConfig } from '@stzhu/eslint-config';
 import reactConfig from '@stzhu/eslint-config/react';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig(...reactConfig);
 ```
@@ -89,9 +89,9 @@ export default defineConfig(...reactConfig);
 ### React Project with Testing
 
 ```javascript
-import { defineConfig } from '@stzhu/eslint-config';
 import reactConfig from '@stzhu/eslint-config/react';
 import vitestConfig from '@stzhu/eslint-config/vitest';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig(...reactConfig, ...vitestConfig);
 ```
@@ -99,9 +99,9 @@ export default defineConfig(...reactConfig, ...vitestConfig);
 ### Expo Project with Tailwind
 
 ```javascript
-import { defineConfig } from '@stzhu/eslint-config';
 import expoConfig from '@stzhu/eslint-config/expo';
 import tailwindConfig from '@stzhu/eslint-config/tailwind';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig(...expoConfig, ...tailwindConfig);
 ```
