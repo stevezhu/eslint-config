@@ -83,7 +83,7 @@ importers:
         version: 1.2.0(eslint@9.35.0(jiti@2.5.1))
       '@stzhu/prettier-plugin-tsconfig':
         specifier: ^0.6.0
-        version: 0.6.0(prettier@3.6.2)
+        version: 0.6.1(prettier@3.6.2)
       '@stzhu/tsconfig':
         specifier: ^0.1.0
         version: 0.1.0
@@ -521,8 +521,8 @@ packages:
   '@storybook/global@5.0.0':
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
 
-  '@stzhu/prettier-plugin-tsconfig@0.6.0':
-    resolution: {integrity: sha512-7hYTR2jWRv2LYNEaVjN3bTLhwFk+gbmwYcxCWhHAV1jXMRlXi4ikAOcRZ6DPded71ZYgEgP/vz7SBMr7Rt9tsQ==}
+  '@stzhu/prettier-plugin-tsconfig@0.6.1':
+    resolution: {integrity: sha512-RNc1pFUgLdH3eA9bKyg/8Hh+m/BpRt1ikxU0pZbtoedytd58L9mhsKf5MKMeRnKIg+dlrvHGMZapzQWrJSFFlw==}
     engines: {node: '>=20'}
     peerDependencies:
       prettier: ^3.x
@@ -2762,7 +2762,7 @@ snapshots:
 
   '@storybook/global@5.0.0': {}
 
-  '@stzhu/prettier-plugin-tsconfig@0.6.0(prettier@3.6.2)':
+  '@stzhu/prettier-plugin-tsconfig@0.6.1(prettier@3.6.2)':
     dependencies:
       '@babel/types': 7.28.4
       prettier: 3.6.2
