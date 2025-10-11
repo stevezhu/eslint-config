@@ -7,10 +7,14 @@ import prettier from 'eslint-config-prettier';
 
 import { importConfig, simpleImportSortConfig } from './configs/import.js';
 
-export default defineConfig(
-  expo as Linter.Config[],
-  // import these separately because expo already includes the recommended import config
-  importConfig,
-  simpleImportSortConfig,
-  prettier,
-);
+export default {
+  configs: {
+    recommended: defineConfig(
+      expo as Linter.Config[],
+      // import these separately because expo already includes the recommended import config
+      importConfig,
+      simpleImportSortConfig,
+      prettier,
+    ),
+  },
+};

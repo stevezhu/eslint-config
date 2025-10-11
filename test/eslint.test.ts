@@ -12,15 +12,15 @@ import turbo from '../src/turbo.js';
 import vitest from '../src/vitest.js';
 
 test.each([
-  [expo, 'expo'],
-  [lingui, 'lingui'],
-  [node, 'node'],
-  [react, 'react'],
-  [storybook, 'storybook'],
-  [tailwind, 'tailwind'],
-  [ts, 'ts'],
-  [turbo, 'turbo'],
-  [vitest, 'vitest'],
+  [expo.configs.recommended, 'expo'],
+  [lingui.configs.recommended, 'lingui'],
+  [node.configs.recommended, 'node'],
+  [react.configs.recommended, 'react'],
+  [storybook.configs.recommended, 'storybook'],
+  [tailwind.configs.recommended, 'tailwind'],
+  [ts.configs.recommended, 'ts'],
+  [turbo.configs.recommended, 'turbo'],
+  [vitest.configs.recommended, 'vitest'],
 ])('eslint uses $1 config without error', async (overrideConfig, _) => {
   const eslint = new ESLint({
     overrideConfigFile: true,

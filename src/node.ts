@@ -3,8 +3,12 @@ import globals from 'globals';
 
 import baseConfig from './ts.js';
 
-export default defineConfig(baseConfig, {
-  languageOptions: {
-    globals: globals.node,
+export default {
+  configs: {
+    recommended: defineConfig(baseConfig.configs.recommended, {
+      languageOptions: {
+        globals: globals.node,
+      },
+    }),
   },
-});
+};
