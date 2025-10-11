@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import react from 'eslint-plugin-react';
-import { configs as reactHooksConfigs } from 'eslint-plugin-react-hooks';
+import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 
@@ -34,7 +34,7 @@ export default defineConfig(
       ],
     },
   },
-  reactHooksConfigs['recommended-latest'],
+  reactHooks.configs.flat['recommended-latest'] ?? [],
   {
     name: 'react-refresh/custom',
     plugins: {
