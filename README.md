@@ -34,12 +34,12 @@ Create an `eslint.config.js` (or `eslint.config.ts` for TypeScript projects) fil
 ```javascript
 // @ts-check
 
-import tsConfig from '@stzhu/eslint-config/ts';
+import ts from '@stzhu/eslint-config/ts';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig(
   // select from one of the configs below
-  ...tsConfig,
+  ts.configs.recommended,
 );
 ```
 
@@ -65,43 +65,50 @@ Add these as needed:
 - `@stzhu/eslint-config/tailwind`: Tailwind CSS configuration (applies to `**/*.tsx` files only)
 - `@stzhu/eslint-config/turbo`: Turborepo monorepo configuration
 - `@stzhu/eslint-config/lingui`: Lingui internationalization configuration
+- `@stzhu/eslint-config/import`: Extra import configurations
 
 ## Example Configurations
 
 ### TypeScript Project
 
 ```javascript
-import tsConfig from '@stzhu/eslint-config/ts';
+import ts from '@stzhu/eslint-config/ts';
 import { defineConfig } from 'eslint/config';
 
-export default defineConfig(...tsConfig);
+export default defineConfig(ts.configs.recommended);
 ```
 
 ### React Project
 
 ```javascript
-import reactConfig from '@stzhu/eslint-config/react';
+import react from '@stzhu/eslint-config/react';
 import { defineConfig } from 'eslint/config';
 
-export default defineConfig(...reactConfig);
+export default defineConfig();
 ```
 
 ### React Project with Testing
 
 ```javascript
-import reactConfig from '@stzhu/eslint-config/react';
-import vitestConfig from '@stzhu/eslint-config/vitest';
+import react from '@stzhu/eslint-config/react';
+import vitest from '@stzhu/eslint-config/vitest';
 import { defineConfig } from 'eslint/config';
 
-export default defineConfig(...reactConfig, ...vitestConfig);
+export default defineConfig(
+  react.configs.recommended,
+  vitest.configs.recommended,
+);
 ```
 
 ### Expo Project with Tailwind
 
 ```javascript
-import expoConfig from '@stzhu/eslint-config/expo';
-import tailwindConfig from '@stzhu/eslint-config/tailwind';
+import expo from '@stzhu/eslint-config/expo';
+import tailwind from '@stzhu/eslint-config/tailwind';
 import { defineConfig } from 'eslint/config';
 
-export default defineConfig(...expoConfig, ...tailwindConfig);
+export default defineConfig(
+  expo.configs.recommended,
+  tailwind.configs.recommended,
+);
 ```
