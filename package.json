@@ -172,7 +172,7 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@10.18.2",
+  "packageManager": "pnpm@10.19.0",
   "engines": {
     "node": ">=20"
   }
