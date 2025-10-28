@@ -1,8 +1,12 @@
 import { defineConfig } from 'eslint/config';
-import storybook from 'eslint-plugin-storybook';
+import { configs as storybookConfigs } from 'eslint-plugin-storybook';
 
 export default {
   configs: {
-    recommended: defineConfig(storybook.configs['flat/recommended']),
+    recommended: defineConfig(
+      storybookConfigs['flat/recommended'] as Parameters<
+        typeof defineConfig
+      >[0],
+    ),
   },
 };

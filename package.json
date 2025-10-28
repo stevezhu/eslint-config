@@ -160,11 +160,15 @@
     "vitest": "^4.0.0"
   },
   "peerDependencies": {
-    "eslint": "^9",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "eslint": "9.x",
+    "storybook": "10.x",
+    "tailwindcss": "4.x",
+    "typescript": "5.x"
   },
   "peerDependenciesMeta": {
+    "storybook": {
+      "optional": true
+    },
     "tailwindcss": {
       "optional": true
     },
