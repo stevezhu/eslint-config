@@ -2,7 +2,7 @@ import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
-export const importConfig = defineConfig({
+export const importPluginConfig = defineConfig({
   name: 'import/custom',
   rules: {
     'import/enforce-node-protocol-usage': ['error', 'always'],
@@ -11,7 +11,7 @@ export const importConfig = defineConfig({
   },
 });
 
-export const simpleImportSortConfig = defineConfig({
+export const simpleImportSortPluginConfig = defineConfig({
   name: 'simple-import-sort/custom',
   plugins: {
     'simple-import-sort': simpleImportSort,
@@ -33,6 +33,6 @@ export default defineConfig(
       },
     },
   },
-  importConfig,
-  simpleImportSortConfig,
+  importPluginConfig,
+  simpleImportSortPluginConfig,
 );
