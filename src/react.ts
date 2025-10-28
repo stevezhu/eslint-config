@@ -36,7 +36,7 @@ export default {
           ],
         },
       },
-      reactHooks.configs.flat['recommended-latest'] ?? [],
+      reactHooks.configs.flat['recommended-latest'],
       {
         name: 'react-refresh/custom',
         plugins: {
