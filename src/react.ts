@@ -6,16 +6,16 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 
-import baseConfig from './ts.js';
+import tsConfig from './ts.js';
 
 export default {
   configs: {
     recommended: defineConfig(
-      baseConfig.configs.recommended,
+      tsConfig.configs.recommended,
       importPlugin.flatConfigs.react,
       {
-        name: 'react/src-browser-globals',
-        files: ['**/*.{ts,tsx}'],
+        name: 'react/src-globals',
+        files: ['**/*.{js,jsx,ts,tsx}'],
         languageOptions: {
           globals: globals.browser,
         },
@@ -37,15 +37,7 @@ export default {
         },
       },
       reactHooks.configs.flat['recommended-latest'],
-      {
-        name: 'react-refresh/custom',
-        plugins: {
-          'react-refresh': reactRefresh,
-        },
-        rules: {
-          'react-refresh/only-export-components': 'warn',
-        },
-      },
+      reactRefresh.configs.vite,
       prettier,
     ),
   },

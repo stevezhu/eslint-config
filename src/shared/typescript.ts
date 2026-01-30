@@ -1,6 +1,10 @@
 import { defineConfig } from 'eslint/config';
 import { configs as tseslintConfigs } from 'typescript-eslint';
 
+export const stylisticTypeChecked = defineConfig(
+  tseslintConfigs.stylisticTypeChecked,
+);
+
 export default defineConfig(
   tseslintConfigs.strictTypeChecked,
   {
@@ -13,6 +17,7 @@ export default defineConfig(
   },
   {
     name: 'typescript/custom',
+    files: ['**/*.{ts,tsx,mts,cts}'],
     rules: {
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-misused-promises': [
@@ -56,7 +61,7 @@ export default defineConfig(
     },
   },
   {
-    files: ['**/*.{cjs,js}'],
-    extends: [tseslintConfigs.disableTypeChecked],
+    files: ['**/*.{js,jsx,mjs,cjs}'],
+    ...tseslintConfigs.disableTypeChecked,
   },
 );
