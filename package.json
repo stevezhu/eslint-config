@@ -1,6 +1,6 @@
 {
   "name": "@stzhu/eslint-config",
-  "version": "0.9.1",
+  "version": "0.10.0-rc.0",
   "description": "Shared config for ESLint",
   "keywords": [
     "eslint"
