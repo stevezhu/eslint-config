@@ -1,11 +1,11 @@
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 
-import baseConfig from './ts.js';
+import tsConfig from './ts.js';
 
 export default {
   configs: {
-    recommended: defineConfig(baseConfig.configs.recommended, {
+    recommended: defineConfig(tsConfig.configs.recommended, {
       languageOptions: {
         globals: globals.node,
       },

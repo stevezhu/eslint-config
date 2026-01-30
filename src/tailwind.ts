@@ -4,7 +4,7 @@ import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 export default {
   configs: {
     recommended: defineConfig({
-      files: ['**/*.{ts,tsx}'],
+      files: ['**/*.{js,jsx,ts,tsx}'],
       extends: [eslintPluginBetterTailwindcss.configs['recommended']],
     }),
   },

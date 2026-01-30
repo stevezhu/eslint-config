@@ -1,22 +1,16 @@
-import { Linter } from 'eslint';
 import { defineConfig } from 'eslint/config';
-// @ts-expect-error - doesn't support typescript
-// .js extension is required because eslint-config-expo doesn't define exports in package.json
 import expo from 'eslint-config-expo/flat.js';
 import prettier from 'eslint-config-prettier';
 
-import {
-  importPluginConfig,
-  simpleImportSortPluginConfig,
-} from './configs/import.js';
+import { importCustom, simpleImportSortCustom } from './shared/import.js';
 
 export default {
   configs: {
     recommended: defineConfig(
-      expo as Linter.Config[],
+      expo,
       // import these separately because expo already includes the recommended import config
-      importPluginConfig,
-      simpleImportSortPluginConfig,
+      importCustom,
+      simpleImportSortCustom,
       prettier,
     ),
   },
