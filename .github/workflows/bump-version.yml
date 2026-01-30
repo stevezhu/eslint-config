@@ -15,5 +15,8 @@ on:
 jobs:
   bump-version:
     uses: stevezhu/actions/.github/workflows/npm-bump-version.yaml@v1.0.0
+    permissions:
+      contents: write
+      pull-requests: write
     with:
       version_type: ${{ inputs.version_type }}
