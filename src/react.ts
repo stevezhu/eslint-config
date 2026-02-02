@@ -3,7 +3,7 @@ import prettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
+import { reactRefresh } from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 
 import tsConfig from './ts.js';
@@ -37,7 +37,7 @@ export default {
         },
       },
       reactHooks.configs.flat['recommended-latest'],
-      reactRefresh.configs.vite,
+      reactRefresh.configs.vite(),
       prettier,
     ),
   },
