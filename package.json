@@ -126,7 +126,7 @@
     "watch": "tsup --watch"
   },
   "dependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.50.1",
     "@typescript-eslint/parser": "^8.50.1",
     "@vitest/eslint-plugin": "^1.6.1",
@@ -159,7 +159,7 @@
     "vitest": "^4.0.16"
   },
   "peerDependencies": {
-    "eslint": "9.x",
+    "eslint": "9.x || 10.x",
     "storybook": "10.x",
     "tailwindcss": "4.x",
     "typescript": "5.x"
