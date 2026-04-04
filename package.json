@@ -15,8 +15,8 @@
   "exports": {
     "./ts": {
       "import": {
-        "types": "./dist/ts.d.ts",
-        "default": "./dist/ts.js"
+        "types": "./dist/ts.d.mts",
+        "default": "./dist/ts.mjs"
       },
       "require": {
         "types": "./dist/ts.d.cts",
@@ -25,8 +25,8 @@
     },
     "./react": {
       "import": {
-        "types": "./dist/react.d.ts",
-        "default": "./dist/react.js"
+        "types": "./dist/react.d.mts",
+        "default": "./dist/react.mjs"
       },
       "require": {
         "types": "./dist/react.d.cts",
@@ -35,8 +35,8 @@
     },
     "./node": {
       "import": {
-        "types": "./dist/node.d.ts",
-        "default": "./dist/node.js"
+        "types": "./dist/node.d.mts",
+        "default": "./dist/node.mjs"
       },
       "require": {
         "types": "./dist/node.d.cts",
@@ -45,8 +45,8 @@
     },
     "./expo": {
       "import": {
-        "types": "./dist/expo.d.ts",
-        "default": "./dist/expo.js"
+        "types": "./dist/expo.d.mts",
+        "default": "./dist/expo.mjs"
       },
       "require": {
         "types": "./dist/expo.d.cts",
@@ -55,8 +55,8 @@
     },
     "./storybook": {
       "import": {
-        "types": "./dist/storybook.d.ts",
-        "default": "./dist/storybook.js"
+        "types": "./dist/storybook.d.mts",
+        "default": "./dist/storybook.mjs"
       },
       "require": {
         "types": "./dist/storybook.d.cts",
@@ -65,8 +65,8 @@
     },
     "./vitest": {
       "import": {
-        "types": "./dist/vitest.d.ts",
-        "default": "./dist/vitest.js"
+        "types": "./dist/vitest.d.mts",
+        "default": "./dist/vitest.mjs"
       },
       "require": {
         "types": "./dist/vitest.d.cts",
@@ -75,8 +75,8 @@
     },
     "./tailwind": {
       "import": {
-        "types": "./dist/tailwind.d.ts",
-        "default": "./dist/tailwind.js"
+        "types": "./dist/tailwind.d.mts",
+        "default": "./dist/tailwind.mjs"
       },
       "require": {
         "types": "./dist/tailwind.d.cts",
@@ -85,8 +85,8 @@
     },
     "./lingui": {
       "import": {
-        "types": "./dist/lingui.d.ts",
-        "default": "./dist/lingui.js"
+        "types": "./dist/lingui.d.mts",
+        "default": "./dist/lingui.mjs"
       },
       "require": {
         "types": "./dist/lingui.d.cts",
@@ -95,8 +95,8 @@
     },
     "./turbo": {
       "import": {
-        "types": "./dist/turbo.d.ts",
-        "default": "./dist/turbo.js"
+        "types": "./dist/turbo.d.mts",
+        "default": "./dist/turbo.mjs"
       },
       "require": {
         "types": "./dist/turbo.d.cts",
@@ -105,8 +105,8 @@
     },
     "./import": {
       "import": {
-        "types": "./dist/import.d.ts",
-        "default": "./dist/import.js"
+        "types": "./dist/import.d.mts",
+        "default": "./dist/import.mjs"
       },
       "require": {
         "types": "./dist/import.d.cts",
@@ -118,12 +118,12 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "format": "prettier -w .",
     "inspect": "eslint --inspect-config",
     "lint": "prettier -c . && eslint .",
     "test": "tsc --noEmit && vitest",
-    "watch": "tsup --watch"
+    "watch": "tsdown --watch"
   },
   "dependencies": {
     "@eslint/js": "^9.39.2",
@@ -155,7 +155,7 @@
     "@types/eslint-config-prettier": "^6.11.3",
     "prettier": "^3.7.4",
     "prettier-plugin-packagejson": "^3.0.0",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.21.7",
     "vitest": "^4.0.16"
   },
   "peerDependencies": {
