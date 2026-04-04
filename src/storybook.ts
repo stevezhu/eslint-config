@@ -1,4 +1,4 @@
-import { Config, defineConfig, globalIgnores } from 'eslint/config';
+import { type Config, defineConfig, globalIgnores } from 'eslint/config';
 import { configs as storybookConfigs } from 'eslint-plugin-storybook';
 
 export default {
