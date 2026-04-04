@@ -135,7 +135,6 @@
     "eslint-config-turbo": "^2.9.3",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-better-tailwindcss": "^4.3.2",
-    "eslint-plugin-expo": "^1.0.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-lingui": "^0.13.0",
     "eslint-plugin-n": "^17.24.0",
@@ -144,14 +143,13 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-storybook": "^10.3.4",
-    "eslint-plugin-turbo": "^2.9.3",
     "globals": "^17.4.0",
     "typescript-eslint": "^8.58.0"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.5.0",
     "@stzhu/prettier-plugin-tsconfig": "^0.7.3",
-    "@stzhu/tsconfig": "^0.1.1",
+    "@stzhu/tsconfig": "^0.4.0",
     "@types/eslint-config-prettier": "^6.11.3",
     "prettier": "^3.8.1",
     "prettier-plugin-packagejson": "^3.0.2",
