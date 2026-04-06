@@ -3,7 +3,7 @@ import nodePlugin from 'eslint-plugin-n';
 
 export default {
   configs: {
-    'file-extension-in-import': defineConfig({
+    fileExtensionInImport: defineConfig({
       plugins: {
         n: nodePlugin,
       },
