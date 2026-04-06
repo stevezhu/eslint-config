@@ -7,5 +7,13 @@ export default {
       files: ['**/*.{js,jsx,ts,tsx}'],
       extends: [eslintPluginBetterTailwindcss.configs['recommended']],
     }),
+    stylistic: defineConfig({
+      files: ['**/*.{js,jsx,ts,tsx}'],
+      extends: [eslintPluginBetterTailwindcss.configs['stylistic']],
+    }),
+    correctness: defineConfig({
+      files: ['**/*.{js,jsx,ts,tsx}'],
+      extends: [eslintPluginBetterTailwindcss.configs['correctness']],
+    }),
   },
 };
