@@ -148,6 +148,7 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.5.0",
+    "eslint": "^9.39.4",
     "@stzhu/prettier-plugin-tsconfig": "^0.7.3",
     "@stzhu/tsconfig": "^0.5.0",
     "@types/eslint-config-prettier": "^6.11.3",
