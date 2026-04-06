@@ -47,7 +47,14 @@ export default {
         // References:
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh/releases/tag/v0.5.0
         // https://bsky.app/profile/arnaud-barre.bsky.social/post/3ma5h5tf2sk2e
-        extraHOCs: ['createRootRouteWithContext'],
+        extraHOCs: [
+          'createFileRoute',
+          'createLazyFileRoute',
+          'createRootRoute',
+          'createRootRouteWithContext',
+          'createRoute',
+          'createLazyRoute',
+        ],
       }),
     ),
   },
