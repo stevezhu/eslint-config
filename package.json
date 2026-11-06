@@ -126,7 +126,7 @@
     "watch": "tsdown --watch"
   },
   "dependencies": {
-    "@eslint/js": "^9.39.4",
+    "@eslint/js": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.58.0",
     "@typescript-eslint/parser": "^8.58.0",
     "@vitest/eslint-plugin": "^1.6.14",
@@ -151,7 +151,7 @@
     "@stzhu/prettier-plugin-tsconfig": "^0.7.3",
     "@stzhu/tsconfig": "^0.5.0",
     "@types/eslint-config-prettier": "^6.11.3",
-    "eslint": "^9.39.4",
+    "eslint": "^10.0.0",
     "prettier": "^3.8.1",
     "prettier-plugin-packagejson": "^3.0.2",
     "tsdown": "^0.21.7",
@@ -159,7 +159,7 @@
     "vitest": "^4.1.2"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0",
+    "eslint": "^9.0.0 || ^10.0.0",
     "storybook": "^10.0.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.0.0 || ^6.0.0"
