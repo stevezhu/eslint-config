@@ -58,9 +58,12 @@ Choose one of these based on your project type:
 
 The React config uses `@eslint-react/eslint-plugin`'s `recommended-typescript`
 preset, with React Hooks and React Refresh checks. Custom React rule overrides
-should use the `@eslint-react/` namespace. The previous
-`react/function-component-definition` rule is no longer enabled because the new
-plugin has no built-in equivalent.
+should use the `@eslint-react/` namespace. The custom
+`@eslint-react/kit/function-component-definition` rule uses the
+[ESLint React recipe](https://eslint-react.xyz/docs/recipes/function-component-definition)
+to require function declarations for named components and function expressions for
+anonymous components, preserving the previous configuration. This rule reports
+errors without automatically rewriting components.
 
 The TypeScript, Node, and React configs use `eslint-plugin-import-x`. Custom import
 rule and resolver overrides should use `import-x/` instead of `import/`. Node

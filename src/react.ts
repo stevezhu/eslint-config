@@ -1,4 +1,5 @@
 import react from '@eslint-react/eslint-plugin';
+import eslintReactKit from '@eslint-react/kit';
 import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-config-prettier';
 import { importX as importPlugin } from 'eslint-plugin-import-x';
@@ -6,6 +7,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import { reactRefresh } from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 
+import { functionComponentDefinition } from './shared/function-component-definition.js';
 import tsConfig from './ts.js';
 
 export default {
@@ -21,6 +23,7 @@ export default {
         },
       },
       react.configs['recommended-typescript'],
+      eslintReactKit().use(functionComponentDefinition).getConfig(),
       reactHooks.configs.flat['recommended-latest'],
       react.configs['disable-conflict-eslint-plugin-react-hooks'],
       reactRefresh.configs.vite(),
