@@ -4,7 +4,7 @@ A collection of ESLint configurations for TypeScript and React projects. This pa
 
 ## Requirements
 
-- ESLint v9 or higher
+- ESLint v10
 - TypeScript v5 or higher (optional, but recommended for TypeScript projects)
 - Tailwind CSS v4 or higher (optional, required for tailwind config)
 

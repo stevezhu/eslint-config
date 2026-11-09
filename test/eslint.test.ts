@@ -31,3 +31,26 @@ test.each([
   expect(results[0]?.errorCount).toBe(0);
   expect(results[0]?.warningCount).toBe(0);
 });
+
+test('expo rules report JSX and hook problems without removed API errors', async () => {
+  const eslint = new ESLint({
+    overrideConfigFile: true,
+    overrideConfig: expo.configs.recommended,
+  });
+  const [result] = await eslint.lintText(
+    `export default function Example({ items, useEffect }) {
+      useEffect(() => { console.log(items); }, []);
+      return items.map(item => <div class="example">{item}</div>);
+    }`,
+    { filePath: 'example.jsx' },
+  );
+
+  expect(result?.fatalErrorCount).toBe(0);
+  expect(result?.messages.map(({ ruleId }) => ruleId)).toEqual(
+    expect.arrayContaining([
+      'react-hooks/exhaustive-deps',
+      'react/jsx-key',
+      'react/no-unknown-property',
+    ]),
+  );
+});
