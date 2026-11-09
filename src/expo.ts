@@ -8,7 +8,7 @@ export default {
   configs: {
     recommended: defineConfig(
       expo,
-      // import these separately because expo already includes the recommended import config
+      // Expo provides its own recommended import rules; add our import-x rules separately.
       importCustom,
       simpleImportSortCustom,
       prettier,

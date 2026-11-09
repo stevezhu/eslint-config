@@ -1,13 +1,18 @@
 import { defineConfig } from 'eslint/config';
-import importPlugin from 'eslint-plugin-import';
+import { importX as importPlugin } from 'eslint-plugin-import-x';
+import nodePlugin from 'eslint-plugin-n';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 export const importCustom = defineConfig({
   name: 'import/custom',
+  plugins: {
+    'import-x': importPlugin,
+    n: nodePlugin,
+  },
   rules: {
-    'import/enforce-node-protocol-usage': ['error', 'always'],
-    'import/first': 'error',
-    'import/newline-after-import': 'error',
+    'n/prefer-node-protocol': 'error',
+    'import-x/first': 'error',
+    'import-x/newline-after-import': 'error',
   },
 });
 
@@ -27,7 +32,7 @@ export default defineConfig(
   {
     name: 'import/settings',
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         typescript: true,
         node: true,
       },
