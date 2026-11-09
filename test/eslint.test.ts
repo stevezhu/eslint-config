@@ -43,6 +43,8 @@ test('react reports missing JSX keys with the automatic JSX runtime', async () =
   );
 
   expect(result?.fatalErrorCount).toBe(0);
+  expect(result?.errorCount).toBe(1);
+  expect(result?.warningCount).toBe(0);
   expect(result?.messages.map((message) => message.ruleId)).toEqual([
     '@eslint-react/no-missing-key',
   ]);
@@ -70,6 +72,8 @@ export default function Example({ enabled }) {
   );
 
   expect(result?.fatalErrorCount).toBe(0);
+  expect(result?.errorCount).toBe(1);
+  expect(result?.warningCount).toBe(0);
   expect(result?.messages.map((message) => message.ruleId)).toEqual([
     '@eslint-react/rules-of-hooks',
   ]);
@@ -90,9 +94,15 @@ test.each([
     const [result] = await eslint.lintText("export { readFile } from 'fs';");
 
     expect(result?.fatalErrorCount).toBe(0);
+    expect(result?.errorCount).toBe(1);
     expect(result?.messages.map((message) => message.ruleId)).toContain(
       'n/prefer-node-protocol',
     );
+
+    const [valid] = await eslint.lintText(
+      "export { readFile } from 'node:fs';",
+    );
+    expect(valid?.messages).toEqual([]);
   },
 );
 
@@ -120,7 +130,128 @@ test('import-x reports unresolved imports', async () => {
   );
 
   expect(result?.fatalErrorCount).toBe(0);
+  expect(result?.errorCount).toBe(1);
+  expect(result?.warningCount).toBe(0);
   expect(result?.messages.map((message) => message.ruleId)).toEqual([
     'import-x/no-unresolved',
   ]);
+});
+
+test.each([
+  [ts.configs.recommended, 'ts'],
+  [node.configs.recommended, 'node'],
+  [react.configs.recommended, 'react'],
+  [expo.configs.recommended, 'expo'],
+])(
+  'custom import rules reject violations with $1 config',
+  async (overrideConfig, _) => {
+    const eslint = new ESLint({
+      overrideConfigFile: true,
+      overrideConfig,
+    });
+
+    for (const [source, ruleId] of [
+      ["export const value = 1;\nimport 'node:fs';", 'import-x/first'],
+      [
+        "import 'node:fs';\nexport const value = 1;",
+        'import-x/newline-after-import',
+      ],
+    ] as const) {
+      const [result] = await eslint.lintText(source, {
+        filePath: 'test/example.js',
+      });
+
+      expect(result?.fatalErrorCount).toBe(0);
+      expect(result?.errorCount).toBe(1);
+      expect(
+        result?.messages
+          .filter((message) => message.severity === 2)
+          .map((message) => message.ruleId),
+      ).toEqual([ruleId]);
+    }
+
+    const [valid] = await eslint.lintText(
+      "import 'node:fs';\n\nexport const value = 1;",
+      { filePath: 'test/example.js' },
+    );
+    expect(valid?.messages).toEqual([]);
+  },
+);
+
+test('react accepts JSX with keys and Hooks at the top level', async () => {
+  const eslint = new ESLint({
+    overrideConfigFile: true,
+    overrideConfig: [
+      ...react.configs.recommended,
+      { settings: { 'import-x/core-modules': ['react'] } },
+    ],
+  });
+  const [result] = await eslint.lintText(
+    `import { useState } from 'react';
+
+export default function Example() {
+  const [count] = useState(0);
+  return [1, 2].map(value => <div key={value}>{value + count}</div>);
+}`,
+    { filePath: 'test/example.jsx' },
+  );
+
+  expect(result?.messages).toEqual([]);
+});
+
+test('react DOM violations are errors while advisory rules remain warnings', async () => {
+  const eslint = new ESLint({
+    overrideConfigFile: true,
+    overrideConfig: react.configs.recommended,
+  });
+  const [result] = await eslint.lintText(
+    'export default function Example() { return <div dangerouslySetInnerHTML={{ __html: "text" }}>child</div>; }',
+    { filePath: 'test/example.jsx' },
+  );
+
+  expect(result?.fatalErrorCount).toBe(0);
+  expect(result?.errorCount).toBe(1);
+  expect(result?.warningCount).toBe(1);
+  expect(result?.messages).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({
+        ruleId: '@eslint-react/dom-no-dangerously-set-innerhtml-with-children',
+        severity: 2,
+      }),
+      expect.objectContaining({
+        ruleId: '@eslint-react/dom-no-dangerously-set-innerhtml',
+        severity: 1,
+      }),
+    ]),
+  );
+
+  const [valid] = await eslint.lintText(
+    'export default function Example() { return <div>child</div>; }',
+    { filePath: 'test/example.jsx' },
+  );
+  expect(valid?.messages).toEqual([]);
+});
+
+test('react Refresh still rejects mixed component and value exports', async () => {
+  const eslint = new ESLint({
+    overrideConfigFile: true,
+    overrideConfig: react.configs.recommended,
+  });
+  const [result] = await eslint.lintText(
+    'export const value = Date.now();\nexport default function Example() { return <div />; }',
+    { filePath: 'test/example.jsx' },
+  );
+
+  expect(result?.fatalErrorCount).toBe(0);
+  expect(result?.errorCount).toBe(1);
+  expect(result?.warningCount).toBe(0);
+  expect(result?.messages.map((message) => message.ruleId)).toEqual([
+    'react-refresh/only-export-components',
+  ]);
+
+  const [valid] = await eslint.lintText(
+    'export default function Example() { return <div />; }',
+    { filePath: 'test/example.jsx' },
+  );
+  expect(valid?.messages).toEqual([]);
 });
