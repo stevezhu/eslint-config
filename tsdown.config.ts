@@ -10,7 +10,7 @@ export default defineConfig({
         alwaysBundle: (id) =>
           ['@eslint-react/eslint-plugin', '@eslint-react/kit'].includes(id),
         onlyBundle: false,
-        skipNodeModulesBundle: false,
+        dts: {},
       },
     },
   },
