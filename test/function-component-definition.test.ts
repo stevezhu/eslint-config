@@ -83,6 +83,17 @@ test.each([
     output:
       'export async function Example({ value }: { value: number }): Promise<JSX.Element> { await Promise.resolve(); return <div>{value}</div>; }',
   },
+  {
+    name: 'TypeScript suppression comments between parameters',
+    code: `export const Example = (
+  props: { value: string },
+  // @ts-expect-error legacy context
+  context
+) => <div>{props.value}{String(context)}</div>;`,
+    output: `export function Example(props: { value: string },
+  // @ts-expect-error legacy context
+  context) { return <div>{props.value}{String(context)}</div>; }`,
+  },
 ])('reports and fixes $name', async ({ code, output }) => {
   const [before] = await eslint.lintText(code, options);
   expect(before?.fatalErrorCount).toBe(0);

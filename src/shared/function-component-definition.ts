@@ -82,7 +82,12 @@ function buildFix(
     const prefix = node.async ? 'async ' : '';
     const typeParams =
       node.typeParameters != null ? src.getText(node.typeParameters) : '';
-    const params = `(${node.params.map((param) => src.getText(param)).join(', ')})`;
+    const firstParam = node.params[0];
+    const lastParam = node.params.at(-1);
+    const params =
+      firstParam && lastParam
+        ? `(${src.text.slice(firstParam.range[0], lastParam.range[1])})`
+        : '()';
     const returnType =
       node.returnType != null ? src.getText(node.returnType) : '';
     const body =
