@@ -14,6 +14,9 @@ importers:
       '@eslint-react/kit':
         specifier: ^5.28.8
         version: 5.28.8(eslint@10.14.0(jiti@2.6.1))(typescript@6.0.2)
+      '@eslint/compat':
+        specifier: ^2.1.1
+        version: 2.1.1(eslint@10.14.0(jiti@2.6.1))
       '@eslint/js':
         specifier: ^10.0.0
         version: 10.0.1(eslint@10.14.0(jiti@2.6.1))
@@ -463,6 +466,15 @@ packages:
     peerDependencies:
       eslint: '*'
       typescript: '*'
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+
+  '@eslint/compat@2.1.1':
+    resolution: {integrity: sha512-rMcy8GSrwNzcISX/BlTDY/GLB4eCopEuy9woIls3To+15OLxykZrxxq+WUcylCPCQ6F4MujjBM1DX5V1aqI3Vw==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
+    peerDependencies:
+      eslint: ^8.40 || 9 || 10
     peerDependenciesMeta:
       eslint:
         optional: true
@@ -3242,6 +3254,12 @@ snapshots:
       eslint: 10.14.0(jiti@2.6.1)
     transitivePeerDependencies:
       - supports-color
+
+  '@eslint/compat@2.1.1(eslint@10.14.0(jiti@2.6.1))':
+    dependencies:
+      '@eslint/core': 1.2.1
+    optionalDependencies:
+      eslint: 10.14.0(jiti@2.6.1)
 
   '@eslint/config-array@0.23.5':
     dependencies:
