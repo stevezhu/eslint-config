@@ -1,7 +1,7 @@
+import react from '@eslint-react/eslint-plugin';
 import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
-import react from 'eslint-plugin-react';
+import { importX as importPlugin } from 'eslint-plugin-import-x';
 import reactHooks from 'eslint-plugin-react-hooks';
 import { reactRefresh } from 'eslint-plugin-react-refresh';
 import globals from 'globals';
@@ -20,23 +20,9 @@ export default {
           globals: globals.browser,
         },
       },
-      react.configs.flat['recommended'] ?? [],
-      react.configs.flat['jsx-runtime'] ?? [],
-      {
-        name: 'react/custom',
-        settings: {
-          react: {
-            version: 'detect',
-          },
-        },
-        rules: {
-          'react/function-component-definition': [
-            'error',
-            { namedComponents: 'function-declaration' },
-          ],
-        },
-      },
+      react.configs['recommended-typescript'],
       reactHooks.configs.flat['recommended-latest'],
+      react.configs['disable-conflict-eslint-plugin-react-hooks'],
       reactRefresh.configs.vite(),
       prettier,
     ),

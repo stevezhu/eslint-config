@@ -1,7 +1,7 @@
 import js from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import prettier from 'eslint-config-prettier/flat';
-import importPlugin from 'eslint-plugin-import';
+import { importX as importPlugin } from 'eslint-plugin-import-x';
 import globals from 'globals';
 
 import importConfig from './shared/import.js';

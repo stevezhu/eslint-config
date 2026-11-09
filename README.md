@@ -56,6 +56,18 @@ Choose one of these based on your project type:
 
 > **Note**: The React config automatically extends the TypeScript config, so you don't need to include both. Similarly, the Expo config includes its own base configuration.
 
+The React config uses `@eslint-react/eslint-plugin`'s `recommended-typescript`
+preset, with React Hooks and React Refresh checks. Custom React rule overrides
+should use the `@eslint-react/` namespace. The previous
+`react/function-component-definition` rule is no longer enabled because the new
+plugin has no built-in equivalent.
+
+The TypeScript, Node, and React configs use `eslint-plugin-import-x`. Custom import
+rule and resolver overrides should use `import-x/` instead of `import/`. Node
+built-in imports still require the `node:` prefix through `n/prefer-node-protocol`.
+The Expo config retains the plugins provided by `eslint-config-expo` and adds our
+custom import rules through `import-x/`.
+
 ### Optional Configs
 
 Add these as needed:
@@ -84,7 +96,7 @@ export default defineConfig(ts.configs.recommended);
 import react from '@stzhu/eslint-config/react';
 import { defineConfig } from 'eslint/config';
 
-export default defineConfig();
+export default defineConfig(react.configs.recommended);
 ```
 
 ### React Project with Testing
