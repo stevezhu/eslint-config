@@ -62,8 +62,10 @@ should use the `@eslint-react/` namespace. The custom
 `@eslint-react/kit/function-component-definition` rule uses the
 [ESLint React recipe](https://eslint-react.xyz/docs/recipes/function-component-definition)
 to require function declarations for named components and function expressions for
-anonymous components, preserving the previous configuration. This rule reports
-errors without automatically rewriting components.
+anonymous components, preserving the previous configuration. It provides editor
+fix suggestions and supports `eslint --fix`, preserving `async`, generic type
+parameters, parameter types, and return types. Cases that cannot be converted
+safely are reported without a fix.
 
 The TypeScript, Node, and React configs use `eslint-plugin-import-x`. Custom import
 rule and resolver overrides should use `import-x/` instead of `import/`. Node
